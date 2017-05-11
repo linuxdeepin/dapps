@@ -10,6 +10,67 @@ from gi.repository import Wnck
 FINDWINDOWDELAY = 5
 CLOSEWINDOWDELAY = 2
 
+'''
+2017-05-11 added two functions by cherry.
+[list]:
+findWindowByAppName
+_findWindowByAppName
+'''
+
+def findWindowByAppName(applicationName, mode="wait", comparetype="equal"):
+    if "wait" == mode:
+        delay = FINDWINDOWDELAY
+    else:
+        delay = CLOSEWINDOWDELAY
+
+    while True:
+        sleep(1)
+        delay = delay - 1
+        #print(delay)
+        win = _findWindowByAppName(applicationName, comparetype)
+        
+        if win != None and "wait" == mode:
+            return win
+
+        if None == win and "wait" != mode:
+            return win
+
+        if 0 == delay:
+            return win
+
+def _findWindowByAppName(applicationName, comparetype):
+    screen = Wnck.Screen.get_default()
+    screen.force_update()
+
+    for win in screen.get_windows():
+        #if "equal" == comparetype:
+            if applicationName == (win.get_application()).get_name():
+                print((win.get_application()).get_name())
+                print(len((win.get_application()).get_name()))
+                print(len(applicationName))
+                screen = None
+                Wnck.shutdown()
+                return win
+        #else:
+            if applicationName in (win.get_application()).get_name():
+                screen = None
+                Wnck.shutdown()
+                return win
+
+    screen = None
+    win = None
+    Wnck.shutdown()
+
+    return None
+
+
+
+
+
+
+
+
+
 def findWindow(windowname, mode="wait", comparetype="equal"):
     if "wait" == mode:
         delay = FINDWINDOWDELAY
