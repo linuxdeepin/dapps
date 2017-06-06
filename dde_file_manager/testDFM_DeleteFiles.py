@@ -13,7 +13,7 @@ from lib import window
 
 #2017-05-27 created by cherry
 class DFM_DeleteFiles(unittest.TestCase):
-    caseid = '0000008'
+    caseid = '0000007'
 
     @classmethod
     def setUpClass(cls):
@@ -24,7 +24,6 @@ class DFM_DeleteFiles(unittest.TestCase):
         cls.testFilePath = 'file://' + '/'.join([cls.pwd, cls.data, cls.fileName])
         cls.urlList = []
         cls.testFile = '/'.join([cls.pwd, cls.data, cls.fileName])
-        cls.silent_list = ['true', 'false']
 
     @classmethod
     def tearDownClass(cls):
@@ -50,15 +49,16 @@ class DFM_DeleteFiles(unittest.TestCase):
         
         args = {"eventType": self.eventType,
                 "urlList": self.urllist(self.testFilePath),
-                "silent": self.silent_list[0],
+                "silent": True,
                 "mode": 2}
+        print(args)
         cmdstring = self.cmdline(args)
         print(cmdstring)
 
         child1 = subprocess.Popen("dde-file-manager -d >/dev/null 2>&1", shell=True)
         sleep(2)
         
-        os.mknod(self.testFile)      
+        os.mknod(self.testFile)    
         List_output_ls = os.listdir('/'.join([self.pwd, self.data]))
         filename = self.judge(self.fileName, List_output_ls)
         print(filename)
