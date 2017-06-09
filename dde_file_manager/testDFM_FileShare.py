@@ -77,7 +77,9 @@ class DFM_FileShare(unittest.TestCase):
         result = self.judge(self.sharename, self.share_list)
         print(result)
         self.assertTrue( 1 == result)
-        
+
+        #delete the share file 
+        (status, output) = rt(dele)
 
         print(child1.pid)
         child1.kill()
