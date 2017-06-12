@@ -1,4 +1,4 @@
-#autotest of dde-file-manager
+# autotest of dde-file-manager
 
 ## Dependencies
 
@@ -11,7 +11,7 @@
 
 ## The result of the test
 
-'''
+```
 The result is saved to the current file "result.txt".
 Every line has the  caseid and the test result.
-'''
+```
