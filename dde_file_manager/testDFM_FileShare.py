@@ -13,7 +13,7 @@ from lib import window
 
 #2017-06-06 created by cherry
 class DFM_FileShare(unittest.TestCase):
-    caseid = '00000013'
+    caseid = '00000015'
 
     @classmethod
     def setUpClass(cls):

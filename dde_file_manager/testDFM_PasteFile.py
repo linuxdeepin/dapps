@@ -13,7 +13,7 @@ from lib import window
 
 #2017-05-24 created by cherry
 class DFM_PasteFile(unittest.TestCase):
-    caseid = '0000005'
+    caseid = '00000010'
 
     @classmethod
     def setUpClass(cls):

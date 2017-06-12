@@ -13,7 +13,7 @@ from lib import window
 
 #2017-06-02 created by cherry
 class DFM_CreateSymlink(unittest.TestCase):
-    caseid = '00000012'
+    caseid = '00000014'
 
     @classmethod
     def setUpClass(cls):

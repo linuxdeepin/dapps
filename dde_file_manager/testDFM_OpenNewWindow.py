@@ -12,7 +12,7 @@ from lib import window
 
 #2017-06-09 created by cherry
 class DFM_OpenNewWindow(unittest.TestCase):
-    caseid = '00000016'
+    caseid = '00000017'
 
     @classmethod
     def setUpClass(cls):
