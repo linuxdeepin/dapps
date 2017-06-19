@@ -1,0 +1,24 @@
+{
+    "OpenFile": [
+        {
+            "fileName": "testOpenFile.doc", 
+            "windowName": "testOpenFile.doc - WPS 文字 - 兼容模式"
+        }, 
+        {
+            "fileName": "testOpenFile.txt", 
+            "windowName": "testOpenFile.txt (~/source/dapps/dde_file_manager/data) - gedit"
+        }
+    ], 
+    "OpenFileByApp": [
+        {
+            "fileName": "testOpenFile.doc", 
+            "windowName": "testOpenFile.doc - WPS 文字 - 兼容模式", 
+            "appName": "/usr/share/applications/wps-office-wps.desktop"
+        }, 
+        {
+            "fileName": "testOpenFile.txt", 
+            "windowName": "testOpenFile.txt (~/source/dapps/dde_file_manager/data) - gedit", 
+            "appName": "org.gnome.gedit.desktop"
+        }
+    ]
+}

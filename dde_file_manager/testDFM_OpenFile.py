@@ -16,12 +16,19 @@ class DFM_OpenFile(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        def load():
+            with open('test_menu.json', 'r') as json_file:
+                data = json.load(json_file)
+                return data
+
+        ddata = load()
+
         cls.pwd = os.getcwd()
         cls.data = 'data'
-        cls.fileName = 'testOpenFile.doc'
+        cls.fileName = ddata['OpenFile'][0]['fileName']
         cls.eventType = 'OpenFile'
         cls.testFilePath = 'file://' + '/'.join([cls.pwd, cls.data, cls.fileName])
-        cls.windowName = 'testOpenFile.doc - WPS 文字 - 兼容模式'
+        cls.windowName = ddata['OpenFile'][0]['windowName']
 
     @classmethod
     def tearDownClass(cls):
