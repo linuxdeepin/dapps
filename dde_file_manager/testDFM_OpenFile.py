@@ -16,19 +16,22 @@ class DFM_OpenFile(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        
         def load():
             with open('test_menu.json', 'r') as json_file:
                 data = json.load(json_file)
                 return data
 
         ddata = load()
+        cls.params = ddata['OpenFile']
+
 
         cls.pwd = os.getcwd()
         cls.data = 'data'
-        cls.fileName = ddata['OpenFile'][0]['fileName']
+        #cls.fileName = ddata['OpenFile'][1]['fileName']
         cls.eventType = 'OpenFile'
-        cls.testFilePath = 'file://' + '/'.join([cls.pwd, cls.data, cls.fileName])
-        cls.windowName = ddata['OpenFile'][0]['windowName']
+        #cls.testFilePath = 'file://' + '/'.join([cls.pwd, cls.data, cls.fileName])
+        #cls.windowName = ddata['OpenFile'][1]['windowName']
 
     @classmethod
     def tearDownClass(cls):
@@ -38,7 +41,12 @@ class DFM_OpenFile(unittest.TestCase):
         args = json.dumps(argDict)
         return 'dde-file-manager -e \'' + args + '\''
 
-    def testOpenFile_URL(self):
+    def testOpenFile_URL(self, fileName, windowName):
+        
+        self.fileName = fileName
+        self.testFilePath = 'file://' + '/'.join([self.pwd, self.data, self.fileName])
+        self.windowName = windowName
+
         args = {"eventType": self.eventType,
                 "url": self.testFilePath,
                 "mode": 2}
@@ -62,9 +70,16 @@ class DFM_OpenFile(unittest.TestCase):
         child1.kill()
         os.system('killall dde-file-manager')
 
+    def testOpenFile(self):
+        for item in self.params:
+            print(item)
+            self.testOpenFile_URL(item['fileName'], item['windowName']) 
+            print('\033[32m********************************************************************************\033[0m')
+
     def suite():
         suite = unittest.TestSuite()
-        suite.addTest(DFM_OpenFile('testOpenFile_URL'))
+        #suite.addTest(DFM_OpenFile('testOpenFile_URL'))
+        suite.addTest(DFM_OpenFile('testOpenFile'))
         return suite
 
 if __name__ == "__main__":

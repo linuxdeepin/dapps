@@ -1,12 +1,44 @@
 {
     "OpenFile": [
         {
+            "fileName": "testOpenFile.txt", 
+            "windowName": "testOpenFile.txt (~/source/dapps/dde_file_manager/data) - gedit"
+        },
+        {
             "fileName": "testOpenFile.doc", 
             "windowName": "testOpenFile.doc - WPS 文字 - 兼容模式"
         }, 
         {
-            "fileName": "testOpenFile.txt", 
-            "windowName": "testOpenFile.txt (~/source/dapps/dde_file_manager/data) - gedit"
+            "fileName": "testOpenFile.xls", 
+            "windowName": "testOpenFile.xls [兼容模式] - WPS 表格"
+        },
+        {
+            "fileName": "testOpenFile.ppt", 
+            "windowName": "testOpenFile.ppt - WPS 演示"
+        },
+        {
+            "fileName": "testOpenFile.pdf", 
+            "windowName": "testOpenFile.pdf - 福昕阅读器"
+        },
+        {
+            "fileName": "simsun.ttf", 
+            "windowName": "SimSun"
+        },
+        {
+            "fileName": "pic-1.jpeg", 
+            "windowName": "深度看图"
+        },
+        {
+            "fileName": "pic-2.jpg", 
+            "windowName": "深度看图"
+        },
+        {
+            "fileName": "pic-3.png", 
+            "windowName": "深度看图"
+        },
+        {
+            "fileName": "夏洛特烦恼.mp3", 
+            "windowName": "夏洛特烦恼 — 所有音乐"
         }
     ], 
     "OpenFileByApp": [
