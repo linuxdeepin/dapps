@@ -56,11 +56,14 @@ class DFM_MoveToTrash(unittest.TestCase):
         child1 = subprocess.Popen("dde-file-manager -d >/dev/null 2>&1", shell=True)
         sleep(2)
 
-        #create testfile
-        os.mknod(self.testFile)      
+        #create testfile             
         List_output_ls = os.listdir('/'.join([self.pwd, self.data]))
         result_1 = self.judge(self.fileName, List_output_ls)
-        print(result_1)
+        #print(result_1)
+        if 1 != result_1:
+            os.mknod(self.testFile)
+        List_output_ls = os.listdir('/'.join([self.pwd, self.data]))
+        result_1 = self.judge(self.fileName, List_output_ls)
         self.assertTrue( 1 == result_1)
         sleep(1)
         
