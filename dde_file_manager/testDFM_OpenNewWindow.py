@@ -38,14 +38,14 @@ class DFM_OpenNewWindow(unittest.TestCase):
         return 'dde-file-manager -e \'' + args + '\''
 
     def testOpenINewWindow_urlList_force(self):
-        
+
         args = {"eventType": self.eventType,
                 "urlList": self.urllist(self.testFilePath),
                 "force": True,
                 "mode": 2}
         cmdstring = self.cmdline(args)
         print(cmdstring)
-        
+
         #if opened dde-file-manager, close it
         docwin = window.findWindow(self.windowName)
         if docwin != None:
@@ -53,7 +53,7 @@ class DFM_OpenNewWindow(unittest.TestCase):
 
         child1 = subprocess.Popen("dde-file-manager -d >/dev/null 2>&1", shell=True)
         sleep(1)
-        
+
         #run the test
         (status, output) = rt(cmdstring)
         sleep(1)
@@ -65,11 +65,11 @@ class DFM_OpenNewWindow(unittest.TestCase):
 
         docwinclose = window.findWindow(self.windowName, mode="nowait")
         self.assertTrue(None == docwinclose)
-        
+
         print(child1.pid)
         child1.kill()
-        os.system('killall dde-file-manager')
-        
+        # os.system('killall dde-file-manager')
+
     def suite():
         suite = unittest.TestSuite()
         suite.addTest(DFM_OpenNewWindow('testOpenINewWindow_urlList_force'))

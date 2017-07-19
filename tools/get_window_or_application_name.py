@@ -19,4 +19,4 @@ print("\n****************************************")
 
 print("【applications_name】:")
 for win in screen.get_windows():
-	print(win.get_application().get_name())
+    print(win.get_application().get_name())
