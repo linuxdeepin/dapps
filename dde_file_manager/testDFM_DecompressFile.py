@@ -25,7 +25,7 @@ class DFM_DecompressFile(unittest.TestCase):
         cls.urlList = []
         #cls.appName = '/usr/share/applications/wps-office-wps.desktop'
         #cls.applicationName = 'testOpenFile.doc - WPS 文字 - 兼容模式'
-        cls.applicationName = 'Archive Manager'
+        cls.applicationName = '归档管理器'
 
     @classmethod
     def tearDownClass(cls):
